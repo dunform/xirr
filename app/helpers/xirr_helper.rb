@@ -1,0 +1,2 @@
+module XirrHelper
+end
