@@ -1,4 +1,6 @@
 Xirr::Application.routes.draw do
+  resources :investments
+
   get "xirr/calculate"
 
   # The priority is based upon order of creation:
