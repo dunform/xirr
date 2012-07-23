@@ -1,23 +1,20 @@
 <h1>Listing investments</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Irr</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @investments.each do |investment| %>
-  <tr>
-    <td><%= investment.name %></td>
-    <td><%= investment.description %></td>
-    <td><%= investment.irr %></td>
-    <td><%= link_to 'Show', investment %></td>
-    <td><%= link_to 'Edit', edit_investment_path(investment) %></td>
-    <td><%= link_to 'Destroy', investment, confirm: 'Are you sure?', method: :delete %></td>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td class="list_description">
+    	<dl>
+    		<dt><%= link_to investment.name, investment %></dt>
+    		<dd><%= investment.description %></dd>
+    		<dd><%= investment.irr %></dd>
+    	</dl>
+    </td>
+    <td>
+    	<%= link_to 'Edit', edit_investment_path(investment) %><br/>
+    	<%= link_to 'Destroy', investment, confirm: 'Are you sure?', method: :delete %><br/>
+	</td>
   </tr>
 <% end %>
 </table>

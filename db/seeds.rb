@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Investment.delete_all
+
+# cashflows = Cashflow.create([{"2001-01-01", -10000}, {"2002-01-01", 5000}])
+Investment.create(name: 'Test Calculation', description: 'Sample investment with cashflows')
